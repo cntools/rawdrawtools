@@ -3,7 +3,7 @@
 #define FONT_DEVELOPER
 
 #include "FontData.h"
-#include "CNFG.h"
+#include "../rawdraw/CNFG.h"
 #include <stdio.h>
 
 
