@@ -1,0 +1,15 @@
+
+vulkantest : rawdraw.c CNFG.c
+	gcc -o $@ $^ -lX11 -lpthread -O3 -lvulkan -lm
+
+rawdraw_mac : rawdraw.c CNFG.c
+	gcc -o $@ $^ -x objective-c -framework Cocoa -framework OpenGL -lpthread -DCNFGRASTERIZER -lm
+
+rawdraw_mac_soft : rawdraw.c CNFG.c
+	gcc -o $@ $^ -x objective-c -framework Cocoa -lpthread -lm
+
+rawdraw_mac_cg : rawdraw.c CNFG.c
+	gcc -o $@ $^ -x objective-c -framework Cocoa -framework CoreGraphics -framework QuartzCore -lm -lpthread -lm
+
+rawdraw_mac_ogl : rawdraw.c CNFG.c
+	gcc -o $@ $^ -x objective-c -framework Cocoa -framework OpenGL -lm -lpthread -DCNFGRASTERIZER -lm
